@@ -352,7 +352,11 @@ export function AccountHeader({
           </Button>
           {account ? (
             <View>
-              <MenuButton ref={triggerRef} onClick={() => setMenuOpen(true)} />
+              <MenuButton
+                aria-label="Account menu"
+                ref={triggerRef}
+                onPress={() => setMenuOpen(true)}
+              />
 
               <Popover
                 triggerRef={triggerRef}
@@ -379,7 +383,11 @@ export function AccountHeader({
             </View>
           ) : (
             <View>
-              <MenuButton ref={triggerRef} onClick={() => setMenuOpen(true)} />
+              <MenuButton
+                aria-label="Account menu"
+                ref={triggerRef}
+                onPress={() => setMenuOpen(true)}
+              />
 
               <Popover
                 triggerRef={triggerRef}
