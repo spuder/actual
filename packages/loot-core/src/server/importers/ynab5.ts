@@ -108,9 +108,10 @@ async function importCategories(
           case 'internal': // uncategorized is ignored too, handled by actual
             break;
           default: {
+            const newName = cat.hidden ? `${cat.name} (hidden)` : cat.name;
             const groupId = entityIdMap.get(cat.category_group_id);
             const id = await actual.createCategory({
-              name: cat.name,
+              name: newName,
               group_id: groupId,
             });
             entityIdMap.set(cat.id, id);
